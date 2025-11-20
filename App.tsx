@@ -22,7 +22,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-pink-50">
+    <div className="relative w-full h-[100dvh] overflow-hidden bg-pink-50">
       {/* Global ambient background for kawaii vibes */}
       {/* We might want to disable standard particles for the final specific aesthetic screens if needed, 
           but a subtle background is nice everywhere. Screen 8 handles its own snow. */}

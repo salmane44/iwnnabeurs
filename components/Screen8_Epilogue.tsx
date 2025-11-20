@@ -24,7 +24,7 @@ const Screen8_Epilogue: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative h-full w-full flex items-center justify-center overflow-hidden">
+    <div className="relative h-full w-full flex items-center justify-center overflow-hidden p-4">
        {/* Falling snow/hearts effect */}
        <div className="absolute inset-0 pointer-events-none">
          {Array.from({ length: 20 }).map((_, i) => (
@@ -55,27 +55,27 @@ const Screen8_Epilogue: React.FC = () => {
          initial={{ opacity: 0, scale: 0.9 }}
          animate={{ opacity: 1, scale: 1 }}
          transition={{ duration: 1.5 }}
-         className="relative bg-white p-8 md:p-12 rounded-[2rem] shadow-[0_0_40px_rgba(255,182,193,0.5)] max-w-3xl w-[90%] border border-pink-50"
+         className="relative bg-white p-6 md:p-12 rounded-[2rem] shadow-[0_0_40px_rgba(255,182,193,0.5)] max-w-3xl w-full border border-pink-50"
        >
-         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
             <div className="shrink-0">
                <motion.div
                  initial={{ rotateY: 90 }}
                  animate={{ rotateY: 0 }}
                  transition={{ duration: 1, delay: 0.5 }}
                >
-                 <BookOpen className="w-32 h-32 md:w-48 md:h-48 text-pink-300" strokeWidth={1} />
+                 <BookOpen className="w-24 h-24 md:w-48 md:h-48 text-pink-300" strokeWidth={1} />
                </motion.div>
             </div>
             
-            <div className="flex-1 font-mono text-sm md:text-lg space-y-4 min-h-[200px] flex flex-col justify-center">
+            <div className="flex-1 font-mono text-sm md:text-lg space-y-3 md:space-y-4 min-h-[150px] md:min-h-[200px] flex flex-col justify-center w-full">
               {lines.map((line, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
-                  className={`${i === 3 ? 'text-pink-600 font-bold text-xl md:text-2xl mt-4 font-sans' : 'text-gray-500'}`}
+                  className={`${i === 3 ? 'text-pink-600 font-bold text-lg md:text-2xl mt-2 md:mt-4 font-sans' : 'text-gray-500 text-xs md:text-base'}`}
                 >
                   {i === 3 ? line : `> ${line}`}
                 </motion.div>

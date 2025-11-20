@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Coffee, Pizza, Candy, IceCream, Sparkles } from 'lucide-react';
@@ -10,10 +11,10 @@ const Screen4_Snack: React.FC<Props> = ({ onComplete }) => {
   const [selected, setSelected] = useState<string | null>(null);
 
   const snacks = [
-    { id: 'pizza', icon: <Pizza className="w-12 h-12 text-orange-500" />, name: "Pizza" },
-    { id: 'coffee', icon: <Coffee className="w-12 h-12 text-amber-800" />, name: "Coffee" }, // Correct
-    { id: 'candy', icon: <Candy className="w-12 h-12 text-pink-500" />, name: "Candy" },
-    { id: 'icecream', icon: <IceCream className="w-12 h-12 text-blue-400" />, name: "Ice Cream" },
+    { id: 'pizza', icon: <Pizza className="w-10 h-10 md:w-12 md:h-12 text-orange-500" />, name: "Pizza" },
+    { id: 'coffee', icon: <Coffee className="w-10 h-10 md:w-12 md:h-12 text-amber-800" />, name: "Coffee" }, // Correct
+    { id: 'candy', icon: <Candy className="w-10 h-10 md:w-12 md:h-12 text-pink-500" />, name: "Candy" },
+    { id: 'icecream', icon: <IceCream className="w-10 h-10 md:w-12 md:h-12 text-blue-400" />, name: "Ice Cream" },
   ];
 
   const handleSelect = (id: string) => {
@@ -35,19 +36,19 @@ const Screen4_Snack: React.FC<Props> = ({ onComplete }) => {
       exit={{ opacity: 0, y: -100 }}
       className="flex flex-col items-center justify-center h-full w-full p-4 z-10"
     >
-      <div className="bg-pink-50/90 backdrop-blur p-8 rounded-[2rem] shadow-2xl max-w-2xl w-full border-4 border-white">
-        <div className="text-center mb-8">
+      <div className="bg-pink-50/90 backdrop-blur p-6 md:p-8 rounded-[2rem] shadow-2xl max-w-2xl w-full border-4 border-white">
+        <div className="text-center mb-6 md:mb-8">
           <span className="inline-block bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider mb-2 animate-pulse">
             EMERGENCY CUTENESS PROTOCOL 🚨
           </span>
-          <h2 className="text-2xl font-bold text-pink-700 mb-2">Post-Study Recovery</h2>
-          <p className="text-gray-600">
+          <h2 className="text-xl md:text-2xl font-bold text-pink-700 mb-2">Post-Study Recovery</h2>
+          <p className="text-sm md:text-base text-gray-600">
             You've studied for 8 hours! Salmane needs to send the perfect snack. 
             <br/><span className="text-pink-500 font-semibold">Choose wisely!</span>
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 md:gap-4">
           {snacks.map((snack) => (
             <motion.button
               key={snack.id}
@@ -70,12 +71,12 @@ const Screen4_Snack: React.FC<Props> = ({ onComplete }) => {
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1.5 }}
                 >
-                   <Sparkles className="w-32 h-32 text-yellow-400 animate-spin-slow" />
+                   <Sparkles className="w-24 h-24 md:w-32 md:h-32 text-yellow-400 animate-spin-slow" />
                 </motion.div>
               )}
               
               {snack.icon}
-              <span className="font-bold text-gray-700">{snack.name}</span>
+              <span className="font-bold text-gray-700 text-sm md:text-base">{snack.name}</span>
             </motion.button>
           ))}
         </div>
