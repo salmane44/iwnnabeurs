@@ -17,7 +17,7 @@ const Screen1_BootUp: React.FC<Props> = ({ onComplete }) => {
       onComplete();
     } else {
       setError(true);
-      setTimeout(() => setError(false), 1000);
+      setTimeout(() => setError(false), 3000);
     }
   };
 
@@ -97,9 +97,9 @@ const Screen1_BootUp: React.FC<Props> = ({ onComplete }) => {
           <motion.p 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
-            className="text-red-400 text-xs md:text-sm mt-2"
+            className="text-red-400 text-xs md:text-sm mt-2 font-medium"
           >
-            Access Denied! That's not the secret name! Hint: Disney Princess 😴
+            Access Denied! Hint: The nickname your grandmother calls you! 😴
           </motion.p>
         )}
       </motion.form>
