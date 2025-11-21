@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ArrowRight } from 'lucide-react';
@@ -17,8 +16,7 @@ const Screen6_Override: React.FC<Props> = ({ onComplete }) => {
     "Guess that's what happens when it tries to process 'Us'.",
     "Before it melted down, it was trying to find the final result.",
     "So, forget the cute, broken robot. Real talk: what result were you hoping for?",
-    "Text me your answer... then check my reply for the final secret code. ♡",
-    "P.S. The code is 'together'. See you soon! ♡"
+    "Text me your answer... I'll be waiting to send you the secret code! ♡"
   ];
 
   useEffect(() => {
@@ -32,9 +30,7 @@ const Screen6_Override: React.FC<Props> = ({ onComplete }) => {
       }, delay);
       // Add longer pauses for dramatic effect
       delay += index === 3 ? 3000 : (index === 4 ? 2000 : 2000); 
-    }, []);
-
-    return () => {}; // Cleanup handled by react in effect
+    });
   }, []);
 
   useEffect(() => {

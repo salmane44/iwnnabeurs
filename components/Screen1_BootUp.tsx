@@ -101,7 +101,7 @@ const Screen1_BootUp: React.FC<Props> = ({ onComplete }) => {
           transition={{ delay: 1.5 }}
           className="text-pink-400 text-xs italic mb-2"
         >
-          (Hint: It's 'Sleeping Beauty'! 👵)
+          (Hint: The princess who loves to sleep... 😴)
         </motion.p>
 
         {error && (
@@ -110,7 +110,7 @@ const Screen1_BootUp: React.FC<Props> = ({ onComplete }) => {
             animate={{ opacity: 1 }} 
             className="text-red-400 text-xs md:text-sm font-medium bg-red-50 p-2 rounded-lg"
           >
-            Access Denied! Try the nickname from grandma! 😴
+            Access Denied! Try the nickname that involves a lot of napping! 😴
           </motion.p>
         )}
       </motion.form>
