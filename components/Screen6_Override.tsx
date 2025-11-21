@@ -17,7 +17,8 @@ const Screen6_Override: React.FC<Props> = ({ onComplete }) => {
     "Guess that's what happens when it tries to process 'Us'.",
     "Before it melted down, it was trying to find the final result.",
     "So, forget the cute, broken robot. Real talk: what result were you hoping for?",
-    "Text me your answer... then check my reply for the final secret code. ♡"
+    "Text me your answer... then check my reply for the final secret code. ♡",
+    "P.S. The code is 'together'. See you soon! ♡"
   ];
 
   useEffect(() => {

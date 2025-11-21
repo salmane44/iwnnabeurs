@@ -73,13 +73,13 @@ const Screen1_BootUp: React.FC<Props> = ({ onComplete }) => {
         <label className="block text-pink-600 font-semibold mb-2 text-sm md:text-base">
           Enter Super-Secret Codename:
         </label>
-        <div className="relative">
+        <div className="relative mb-2">
           <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-pink-400 w-5 h-5" />
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Who are you?"
+            placeholder="Your sweet nickname..."
             className={`w-full pl-12 pr-12 py-3 md:py-4 rounded-full border-2 outline-none focus:ring-4 transition-all duration-300 text-sm md:text-base ${
               error 
                 ? 'border-red-400 bg-red-50 focus:ring-red-200 animate-shake' 
@@ -93,13 +93,24 @@ const Screen1_BootUp: React.FC<Props> = ({ onComplete }) => {
             <Heart className="w-5 h-5 fill-current" />
           </button>
         </div>
+        
+        {/* Static hint to help the user */}
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="text-pink-400 text-xs italic mb-2"
+        >
+          (Hint: It's 'Sleeping Beauty'! 👵)
+        </motion.p>
+
         {error && (
           <motion.p 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
-            className="text-red-400 text-xs md:text-sm mt-2 font-medium"
+            className="text-red-400 text-xs md:text-sm font-medium bg-red-50 p-2 rounded-lg"
           >
-            Access Denied! Hint: The nickname your grandmother calls you! 😴
+            Access Denied! Try the nickname from grandma! 😴
           </motion.p>
         )}
       </motion.form>
