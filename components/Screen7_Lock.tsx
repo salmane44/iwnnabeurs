@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Lock, Sparkles, Key } from 'lucide-react';
+import { Lock, Sparkles, Key, ArrowRight } from 'lucide-react';
 
 interface Props {
   onComplete: () => void;
@@ -80,12 +80,19 @@ const Screen7_Lock: React.FC<Props> = ({ onComplete }) => {
             value={code}
             onChange={(e) => setCode(e.target.value)}
             placeholder="Enter Secret Code"
-            className={`w-full pl-12 pr-4 py-3 md:py-4 rounded-full border-2 outline-none focus:ring-4 transition-all duration-300 text-center tracking-widest text-base md:text-lg ${
+            className={`w-full pl-12 pr-14 py-3 md:py-4 rounded-full border-2 outline-none focus:ring-4 transition-all duration-300 text-center tracking-widest text-base md:text-lg ${
               error 
                 ? 'border-red-400 bg-red-50 focus:ring-red-200 animate-shake text-red-500 placeholder-red-300' 
                 : 'border-pink-300 bg-pink-50 text-pink-600 placeholder-pink-300 focus:border-pink-500 focus:ring-pink-200'
             }`}
           />
+          <button
+            type="submit"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white p-2 md:p-2.5 rounded-full transition-colors shadow-md z-10"
+            aria-label="Submit code"
+          >
+            <ArrowRight className="w-5 h-5" />
+          </button>
         </div>
         {error && (
           <p className="text-red-400 text-xs md:text-sm text-center mt-3">
