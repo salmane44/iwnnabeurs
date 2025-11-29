@@ -17,6 +17,7 @@ import Screen9_MusicPuzzle from './components/Screen9_MusicPuzzle';
 import Screen10_Personality from './components/Screen10_Personality';
 import Screen11_Gratitude from './components/Screen11_Gratitude';
 import Screen12_Racing from './components/Screen12_Racing';
+import Screen12b_IGLock from './components/Screen12b_IGLock';
 import Screen13_Winter from './components/Screen13_Winter';
 import Screen14_Confession from './components/Screen14_Confession';
 
@@ -38,6 +39,7 @@ const App: React.FC = () => {
        gameState !== GameState.RECAP && 
        gameState !== GameState.CHAPTER_2_GRATITUDE &&
        gameState !== GameState.CHAPTER_2_DEC1 &&
+       gameState !== GameState.CHAPTER_2_LOCK &&
        <Background />}
 
       <div className="relative z-10 w-full h-full flex flex-col">
@@ -66,7 +68,12 @@ const App: React.FC = () => {
 
           {/* Level 4: Racing */}
           {gameState === GameState.CHAPTER_2_RACING && (
-            <Screen12_Racing key="racing" onComplete={() => nextState(GameState.CHAPTER_2_DEC1)} />
+            <Screen12_Racing key="racing" onComplete={() => nextState(GameState.CHAPTER_2_LOCK)} />
+          )}
+
+          {/* New Level: IG Lock */}
+          {gameState === GameState.CHAPTER_2_LOCK && (
+            <Screen12b_IGLock key="ig-lock" onComplete={() => nextState(GameState.CHAPTER_2_DEC1)} />
           )}
 
           {/* Transition: December 1st */}

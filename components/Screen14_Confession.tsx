@@ -52,10 +52,13 @@ const Screen14_Confession: React.FC = () => {
          className="max-w-xl text-center space-y-4 md:space-y-6 mb-8 md:mb-12"
        >
           <p className="text-gray-600 text-base md:text-xl font-medium leading-relaxed px-4">
-            "I don't want to just be your F1 rival or your best friend anymore."
+            "Since I can't give you my sweater across the miles yet..."
           </p>
-          <p className="text-gray-800 text-base md:text-xl font-medium leading-relaxed px-4">
-            "I want to be your Team Mate, your 3 AM comfort, and the person who makes you laugh every single day."
+          <p className="text-gray-800 text-base md:text-2xl font-bold leading-relaxed px-4">
+            "I'm giving you my heart instead."
+          </p>
+          <p className="text-gray-600 text-base md:text-xl font-medium leading-relaxed px-4">
+             "I want to be your Team Mate, your 3 AM comfort, and the person who keeps you warm."
           </p>
           <h1 className="text-xl md:text-3xl font-bold text-pink-600 pt-4 font-quicksand">
             Firdaous, will you start this new chapter with me?

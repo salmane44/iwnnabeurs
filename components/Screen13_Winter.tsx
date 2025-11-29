@@ -13,10 +13,10 @@ const Screen13_Winter: React.FC<Props> = ({ onComplete }) => {
   useEffect(() => {
     const script = [
       "System Analysis Complete.",
-      "We have reviewed the laughter, the music, the teasing, and the care.",
-      "Today is December 1st.",
-      "In the world of stories, this is the date when everything changes.",
-      "This is the date when a new chapter begins."
+      "We have reviewed the laughter, the music, the teasing, and the silence.",
+      "Today is December 3rd.",
+      "The day of the Sweater.",
+      "The day we give warmth to the person we cherish the most."
     ];
 
     let delay = 1000;
@@ -34,6 +34,15 @@ const Screen13_Winter: React.FC<Props> = ({ onComplete }) => {
 
   return (
     <div className="w-full h-full bg-[#0F172A] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center">
+      {/* Cozy Knitted Texture Overlay */}
+      <div 
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px),
+                            repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)`
+        }}
+      />
+
       {/* Falling Snow Effect */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 50 }).map((_, i) => (
@@ -61,8 +70,8 @@ const Screen13_Winter: React.FC<Props> = ({ onComplete }) => {
         ))}
       </div>
 
-      {/* Moon Glow */}
-      <div className="absolute top-10 right-10 w-32 h-32 bg-blue-100/10 rounded-full blur-3xl" />
+      {/* Moon/Warmth Glow */}
+      <div className="absolute top-10 right-10 w-32 h-32 bg-orange-100/10 rounded-full blur-3xl" />
 
       {/* Text Container */}
       <div className="z-10 max-w-2xl space-y-6">
@@ -74,8 +83,8 @@ const Screen13_Winter: React.FC<Props> = ({ onComplete }) => {
             transition={{ duration: 1.5 }}
             className={`
               font-quicksand
-              ${i === 2 ? 'text-3xl md:text-5xl font-bold text-blue-200 py-4' : 'text-blue-100/80 text-lg md:text-xl font-medium'}
-              ${i >= 3 ? 'italic' : ''}
+              ${i === 2 || i === 3 ? 'text-3xl md:text-5xl font-bold text-blue-200 py-2' : 'text-blue-100/80 text-lg md:text-xl font-medium'}
+              ${i >= 4 ? 'italic text-pink-200' : ''}
             `}
           >
             {line}
@@ -92,7 +101,7 @@ const Screen13_Winter: React.FC<Props> = ({ onComplete }) => {
             onClick={onComplete}
             className="absolute bottom-10 text-blue-300 text-sm animate-pulse hover:text-white transition-colors"
          >
-            Tap to begin the new chapter...
+            Tap to feel the warmth...
          </motion.button>
       )}
     </div>
